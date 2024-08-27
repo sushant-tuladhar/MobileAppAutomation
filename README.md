@@ -15,3 +15,6 @@ Note: "Appium" server should be started while using this application.
   in the system if present otherwise skips and goes to the menu and scolls down to do the logout and confirmation button is clicked. We can run the changes using LoginRunner in test. 
 </p>
 
+<p>
+  Execution video: <a href="https://drive.google.com/file/d/1a850iW-ft3pA-FK97NSAM-6N2WpoYq4k/view?usp=sharing">Here</a>  
+</p>
