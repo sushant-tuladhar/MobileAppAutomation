@@ -27,8 +27,8 @@ public class Dashboard extends BaseClass {
 
 
     public void scanAndPay(){
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(AppiumBy.xpath("//android.view.View[contains(@content-desc,'Scan & Pay')]"))));
-        driver.findElement(AppiumBy.xpath("//android.view.View[contains(@content-desc,'Scan & Pay')]")).click();
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(AppiumBy.xpath("//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.widget.ImageView"))));
+        driver.findElement(AppiumBy.xpath("//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.widget.ImageView")).click();
     }
 
     public void menu(){
@@ -48,5 +48,27 @@ public class Dashboard extends BaseClass {
 
     public void notificationLoadValidate(){
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(AppiumBy.xpath("//android.widget.ScrollView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View"))));
+    }
+
+    public void supportLoadValidate(){
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(AppiumBy.xpath("//android.view.View[contains(@content-desc,'Help and Support')]"))));
+    }
+
+    public void menuLoadValidate(){
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(AppiumBy.xpath("//android.widget.ImageView[contains(@content-desc,'Khalti Quiz')]"))));
+    }
+
+    public void backButton(){
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(AppiumBy.xpath("//android.widget.Button"))));
+        driver.findElement(AppiumBy.xpath("//android.widget.Button")).click();
+    }
+
+    public void scanAndPayLoadValidate(){
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(AppiumBy.accessibilityId("SHOW MY QR CODE"))));
+    }
+
+    public void scanAndPayBackButton(){
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(AppiumBy.accessibilityId("Back"))));
+        driver.findElement(AppiumBy.accessibilityId("Back")).click();
     }
 }

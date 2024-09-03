@@ -22,14 +22,26 @@ public class DashboardValidatorTest extends BaseClass {
         dashboard.transaction();
         dashboard.transactionLoadValidate();
 
-        //Return back to home
+        //Return back to home as back button has different selector
         dashboard.home();
 
         dashboard.notifications();
         dashboard.notificationLoadValidate();
+        dashboard.backButton();
 
-        //Return back to home
-        dashboard.home();
+        //Click support
+        dashboard.support();
+        dashboard.supportLoadValidate();
+        dashboard.backButton();
+
+        //Click menu
+        dashboard.menu();
+        dashboard.menuLoadValidate();
+        dashboard.backButton();
+
+        dashboard.scanAndPay();
+        dashboard.scanAndPayLoadValidate();
+        dashboard.scanAndPayBackButton();
     }
 
     @AfterTest
