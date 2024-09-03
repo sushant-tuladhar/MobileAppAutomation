@@ -1,3 +1,4 @@
+package org.example.pageobject;
 
 import io.appium.java_client.AppiumBy;
 

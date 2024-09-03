@@ -2,6 +2,7 @@ package org.example.base;
 
 
 import io.appium.java_client.android.AndroidDriver;
+import org.example.pageobject.Login;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
@@ -11,6 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
 
 public class BaseClass {
 
@@ -50,6 +52,25 @@ public class BaseClass {
             e.printStackTrace();
             throw new RuntimeException("Configuration.properties not found at " + propertyFilePath);
         }
+    }
+
+    public void login(){
+        Login ln=new Login();
+        ln.signIn();
+        ln.cred();
+        ln.closeModal();
+        String balance=ln.balance();
+        if(!balance.isEmpty()){
+            System.out.println("Balance seen on the UI is as follows: "+balance);
+        }
+        else{
+            throw new Error("Login failed");
+        }
+    }
+
+    public void logout(){
+        Logout logout=new Logout();
+        logout.logOut();
     }
 
     @AfterTest
