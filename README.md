@@ -11,8 +11,11 @@ To use this application, you need to have :
 Note: "Appium" server should be started while using this application.
 
 <p>
-  The application logins to the Khalti app passed via Configuration file. After login it validates if the balance icon is shown otherwise it shows failure. It also checks for the loading of ads
-  in the system if present otherwise skips and goes to the menu and scolls down to do the logout and confirmation button is clicked. We can run the changes using LoginRunner in test. 
+  The application logins to the Khalti app passed via Configuration file. Run the DashboardValidatorTest for checking the UI validation of 
+different menus used in the application. The beforeTest annotation has the login configured where it enters the credentials and checks if the 
+page is landed to dashboard page by validating the balance part. The menu validation part which is the dashboardValidation goes to every menus present along
+with notifications tab and wait until the UI components are loaded in the menu section. Finally, after clicking and validating the UI components in every menu page
+it goes to afterTest annotation which has the logout section written for the application. It goes in menu and clicks logout and confirmation.
 </p>
 
 <p>
